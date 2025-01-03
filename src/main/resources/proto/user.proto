@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.kyulab.grpc.user;
+
+service UserService {
+  rpc UserExists (UserExistsRequest) returns (UserExistsResponse);
+}
+
+message UserExistsRequest {
+  int32 user_id = 1;
+}
+
+message UserExistsResponse {
+  bool exists = 1;
+}

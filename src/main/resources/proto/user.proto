@@ -2,7 +2,11 @@ syntax = "proto3";
 
 package com.kyulab.grpc.user;
 
+option java_multiple_files = true; // message를 모두 독립적으로 생성
+option java_outer_classname = "UserServiceProto";
+
 service UserService {
+  // 유저 아이디로 실제로 유저가 존재하는지 확인한다.
   rpc UserExists (UserExistsRequest) returns (UserExistsResponse);
 }
 
